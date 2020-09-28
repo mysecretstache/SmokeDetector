@@ -36,7 +36,7 @@ class GenerateControlSignal:
 
             # This if check seems to be duplicated above...why?
             controlSignal = self.kValue * error + (self.iValue*self.timeSample)*self.totalError + (self.dValue/self.timeSample) * self.deltaError
-            if controlSignal <= self.maxControl:
+            if controlSignal >= self.maxControl:
                 controlSignal = self.maxControl
             elif controlSignal <= self.minControl:
                 controlSignal = self.minControl
